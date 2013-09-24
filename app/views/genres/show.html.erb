@@ -3,3 +3,12 @@ Genre: <%= @genre.name %>
 <% @genre.songs.each do |song| %>
   <%= link_to song.title, song %>
 <% end %>
+
+<%= link_to 'describe this', describe_genre_path %>
+
+<div>
+  Described:
+  <% @genre.descriptions.each do |description| %>
+    <%= link_to description.body, description %>
+  <% end %>
+</div>

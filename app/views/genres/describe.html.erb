@@ -1,0 +1,7 @@
+Please! Describe <%= @genre.name %>.
+<%= form_for @genre.descriptions.new do |f| %>
+  <%= f.text_area :body %>
+  <%= hidden_field_tag :genre_id, @genre.id %>
+  <br>
+  <%= f.submit %>
+<% end %>

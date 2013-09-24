@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @description.body %>
+</p>
+
+<div>
+  <% @description.genres.each do |genre| %>
+    <%= link_to genre.name, genre %>
+  <% end %>
+</div>
+
+<%= link_to 'Edit', edit_description_path(@description) %> |
+<%= link_to 'Back', descriptions_path %>

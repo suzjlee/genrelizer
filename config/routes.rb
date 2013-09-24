@@ -1,7 +1,15 @@
 Genrelizer::Application.routes.draw do
+  resources :genre_descriptions
+
+  resources :descriptions
+
   resources :genrelizations
   
-  resources :genres
+  resources :genres do
+    member do
+      get :describe
+    end
+  end
   
   resources :songs
 

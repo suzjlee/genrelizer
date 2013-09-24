@@ -1,0 +1,29 @@
+<h1>Listing genre_descriptions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Genre</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @genre_descriptions.each do |genre_description| %>
+      <tr>
+        <td><%= genre_description.genre %></td>
+        <td><%= genre_description.description %></td>
+        <td><%= link_to 'Show', genre_description %></td>
+        <td><%= link_to 'Edit', edit_genre_description_path(genre_description) %></td>
+        <td><%= link_to 'Destroy', genre_description, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Genre description', new_genre_description_path %>

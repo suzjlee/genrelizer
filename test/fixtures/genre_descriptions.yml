@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  genre_id: 
+  description_id: 
+
+two:
+  genre_id: 
+  description_id: 
