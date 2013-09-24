@@ -5,5 +5,21 @@
   <%= @artist.name %>
 </p>
 
+<div id="songs">
+  <b>Songs:</b>
+  <% @artist.songs.each do |song| %>
+    <div>
+      <%= link_to song.title, song %>
+      <% song.genres.each do |genre| %>
+        <%= link_to genre.name, genre %>
+        <i>
+          <% genre.parent_genres.each do |child| %>
+            <%= link_to child.name, child %>
+          <% end %>
+        </i>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>
