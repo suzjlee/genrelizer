@@ -6,6 +6,12 @@ Genre: <%= @genre.name %>
 
 <%= link_to 'describe this', describe_genre_path %>
 
+<br>
+<i>considered a subgenre of:</i>
+<% @genre.parent_genres.each do |genre| %>
+  <%= genre.name %>
+<% end %>
+  
 <div>
   Described:
   <% @genre.descriptions.each do |description| %>

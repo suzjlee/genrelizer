@@ -1,0 +1,29 @@
+<h1>Listing sub_genres</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parent genre</th>
+      <th>Child genre</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sub_genres.each do |sub_genre| %>
+      <tr>
+        <td><%= sub_genre.parent_genre %></td>
+        <td><%= sub_genre.child_genre %></td>
+        <td><%= link_to 'Show', sub_genre %></td>
+        <td><%= link_to 'Edit', edit_sub_genre_path(sub_genre) %></td>
+        <td><%= link_to 'Destroy', sub_genre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sub genre', new_sub_genre_path %>

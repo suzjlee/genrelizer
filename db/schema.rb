@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130924205325) do
+ActiveRecord::Schema.define(version: 20130924213127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,5 +57,15 @@ ActiveRecord::Schema.define(version: 20130924205325) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "sub_genres", force: true do |t|
+    t.integer  "parent_genre_id"
+    t.integer  "child_genre_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sub_genres", ["child_genre_id"], name: "index_sub_genres_on_child_genre_id", using: :btree
+  add_index "sub_genres", ["parent_genre_id"], name: "index_sub_genres_on_parent_genre_id", using: :btree
 
 end

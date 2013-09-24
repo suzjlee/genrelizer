@@ -5,3 +5,10 @@ Please! Describe <%= @genre.name %>.
   <br>
   <%= f.submit %>
 <% end %>
+
+<%= @genre.name %> is a sub-genre of:
+<%= form_for SubGenre.new do |f| %>
+  <%= f.select :parent_genre_id, options_from_collection_for_select(Genre.all, :id, :name), :include_blank => true %>
+  <%= f.hidden_field :child_genre_id, :value => @genre.id %>
+  <%= f.submit %>
+<% end %>
