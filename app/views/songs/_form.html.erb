@@ -16,8 +16,8 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-	<%= f.label :artist_id %>
-	<%= f.select :artist_id, options_from_collection_for_select(Artist.all, :id, :name, @song.artist_id), :include_blank => true %>
+  	<%= f.label :artist_id %>
+  	<%= f.select :artist_id, options_from_collection_for_select(Artist.all, :id, :name, @song.artist_id), :include_blank => true %>
   </div>
   <div class="actions">
     <%= f.submit %>
