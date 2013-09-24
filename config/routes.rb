@@ -1,4 +1,6 @@
 Genrelizer::Application.routes.draw do
+  resources :genrelizations
+  
   resources :genres
   
   resources :songs

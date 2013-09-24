@@ -10,5 +10,19 @@
   <%= @song.title %>
 </p>
 
+<b>Genres</b>
+<% @song.genres.each do |genre| %>
+  <%= link_to genre.name, genre %>
+<% end %>
+
+<p>
+  Add a genre:
+  <%= form_for @song.genrelizations.new do |f| %>
+    <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name), :include_blank => true %>
+    <%= f.hidden_field :song_id %>
+    <%= f.submit %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_song_path(@song) %> |
 <%= link_to 'Back', songs_path %>
