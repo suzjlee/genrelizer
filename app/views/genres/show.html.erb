@@ -1,25 +1,37 @@
-Genre: <%= @genre.name %>
-
-<% @genre.songs.each do |song| %>
-  <%= link_to song.title, song %>
-<% end %>
-
-<%= link_to 'describe this', describe_genre_path %>
-
-<br>
-<i>considered a subgenre of:</i>
-<% @genre.parent_genres.each do |genre| %>
-  <%= link_to genre.name, genre %>
-<% end %>
-<br>
-<i>with <%= @genre.child_genres.count %> subgenres of its own:</i>
-<% @genre.child_genres.each do |genre| %>
-  <%= link_to genre.name, genre %>
-<% end %>
-  
-<div>
-  Described:
+<div class="genre_title"><%= @genre.name %></div>
+<div class="genre_descriptions">
   <% @genre.descriptions.each do |description| %>
     <%= link_to description.body, description %>
   <% end %>
 </div>
+
+<div class="genre_songs">
+  <% @genre.songs.each do |song| %>
+    <div class="song">
+      <%= link_to song.title, song %>
+      by
+      <%= link_to song.artist.name, song.artist %>
+      <% song.genres.reject { |g| g == @genre }.each do |genre| %>
+        also <%= link_to genre.name, genre %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'describe this', describe_genre_path %>
+
+<br>
+<% if @genre.parent_genres.present? %>
+  <i>considered a subgenre of:</i>
+  <% @genre.parent_genres.map do |genre| %>
+    <%= link_to genre.name, genre %>
+  <% end.to_sentence %>
+  <br>
+<% end %>
+
+
+<i><%= pluralize @genre.child_genres.count, 'subgenre' %>:</i>
+<% @genre.child_genres.each do |genre| %>
+  <%= link_to genre.name, genre %>
+<% end %>
+  
