@@ -25,6 +25,7 @@ class SubGenresController < ApplicationController
   # POST /sub_genres.json
   def create
     @sub_genre = SubGenre.new(sub_genre_params)
+    @sub_genre.creator_id = current_audiophile.id
 
     respond_to do |format|
       if @sub_genre.save

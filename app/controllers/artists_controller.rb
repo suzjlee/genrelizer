@@ -25,6 +25,7 @@ class ArtistsController < ApplicationController
   # POST /artists.json
   def create
     @artist = Artist.new(artist_params)
+    @artist.creator_id = current_audiophile.id
 
     respond_to do |format|
       if @artist.save

@@ -25,10 +25,11 @@ class DescriptionsController < ApplicationController
   # POST /descriptions.json
   def create
     @description = Description.new(description_params)
-
+    @description.creator_id = current_audiophile.id
+    
     respond_to do |format|
       if @description.save
-        @description.genre_descriptions.create :genre_id => params[:genre_id]
+        @description.genre_descriptions.create :genre_id => params[:genre_id], :creator_id => current_audiophile.id
         format.html { redirect_to @description, notice: 'Description was successfully created.' }
         format.json { render action: 'show', status: :created, location: @description }
       else

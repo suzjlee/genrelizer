@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130925040022) do
+ActiveRecord::Schema.define(version: 20130925051105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20130925040022) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "creator_id"
   end
 
   create_table "audiophiles", force: true do |t|
@@ -55,6 +56,7 @@ ActiveRecord::Schema.define(version: 20130925040022) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "creator_id"
   end
 
   create_table "genre_descriptions", force: true do |t|
@@ -62,6 +64,7 @@ ActiveRecord::Schema.define(version: 20130925040022) do
     t.integer  "description_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "creator_id"
   end
 
   add_index "genre_descriptions", ["description_id"], name: "index_genre_descriptions_on_description_id", using: :btree
@@ -72,12 +75,14 @@ ActiveRecord::Schema.define(version: 20130925040022) do
     t.integer  "genre_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "creator_id"
   end
 
   create_table "genres", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "creator_id"
   end
 
   create_table "songs", force: true do |t|
@@ -85,6 +90,7 @@ ActiveRecord::Schema.define(version: 20130925040022) do
     t.integer  "artist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "creator_id"
   end
 
   create_table "sub_genres", force: true do |t|
@@ -92,6 +98,7 @@ ActiveRecord::Schema.define(version: 20130925040022) do
     t.integer  "child_genre_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "creator_id"
   end
 
   add_index "sub_genres", ["child_genre_id"], name: "index_sub_genres_on_child_genre_id", using: :btree

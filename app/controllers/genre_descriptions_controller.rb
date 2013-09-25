@@ -25,6 +25,7 @@ class GenreDescriptionsController < ApplicationController
   # POST /genre_descriptions.json
   def create
     @genre_description = GenreDescription.new(genre_description_params)
+    @genre_description.creator_id = current_audiophile.id
 
     respond_to do |format|
       if @genre_description.save

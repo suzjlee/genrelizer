@@ -5,7 +5,10 @@ class GenrelizationsController < ApplicationController
   end
 
   def create
-    @genrelization = Genrelization.create genrelization_params
+    @genrelization = Genrelization.new genrelization_params
+    @genrelization.creator_id = current_audiophile.id
+    @genrelization.save
+    
     redirect_to @genrelization
   end
   
