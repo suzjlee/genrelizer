@@ -1,4 +1,5 @@
 Genrelizer::Application.routes.draw do
+  devise_for :audiophiles
   resources :sub_genres
 
   resources :genre_descriptions

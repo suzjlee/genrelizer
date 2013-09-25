@@ -9,7 +9,12 @@ Genre: <%= @genre.name %>
 <br>
 <i>considered a subgenre of:</i>
 <% @genre.parent_genres.each do |genre| %>
-  <%= genre.name %>
+  <%= link_to genre.name, genre %>
+<% end %>
+<br>
+<i>with <%= @genre.child_genres.count %> subgenres of its own:</i>
+<% @genre.child_genres.each do |genre| %>
+  <%= link_to genre.name, genre %>
 <% end %>
   
 <div>
