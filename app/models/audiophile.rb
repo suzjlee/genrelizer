@@ -4,9 +4,11 @@ class Audiophile < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
+  belongs_to :current_genre_of_choice, :class_name => 'Genre'
+         
   def display_name
     if name.present?
-      
+      name
     else
       email
     end

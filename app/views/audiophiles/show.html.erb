@@ -1,0 +1,11 @@
+<div>
+  <%= @audiophile.name %>
+</div>
+<%= link_to 'edit profile', edit_audiophile_path(@audiophile) if current_audiophile == @audiophile %>
+<div>
+  <%= @audiophile.hometown %>
+</div>
+
+<div>
+  <%= link_to @audiophile.current_genre_of_choice.name, @audiophile.current_genre_of_choice %>
+</div>

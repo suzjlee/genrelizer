@@ -1,0 +1,27 @@
+<%= form_for @audiophile do |f| %>
+  <div>
+    <%= f.text_field :first_name %>
+    <%= f.label :first_name %>
+  </div>
+  <div>
+    <%= f.text_field :last_name %>
+    <%= f.label :last_name %>
+  </div>
+  <div>
+    <%= f.text_field :hometown %>
+    <%= f.label :hometown %>
+  </div>
+  <div>
+    <%= f.text_field :phone %>
+    <%= f.label :phone %>
+  </div>
+  <div>
+    <%= f.text_field :alias %>
+    <%= f.label :alias %>
+  </div>
+  <div>
+    <%= f.select :current_genre_of_choice_id, options_from_collection_for_select(Genre.all, :id, :name), :include_blank => true %>
+    <%= f.label 'Current Genre of Choice' %>
+  </div>
+  <%= f.submit 'Update' %>
+<% end %>
