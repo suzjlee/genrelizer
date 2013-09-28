@@ -3,6 +3,13 @@
     <% @artists.each do |artist| %>
       <div class="artist">
         <%= link_to artist.name, artist %>
+        <div class="artist_genres">
+          <%= "(" -%>
+          <% artist.genres.each do |genre| %>
+            <%= link_to genre.name, genre %>
+          <% end %>
+          <%= ")" -%>
+        </div>
       </div>
     <% end %>
 <br>
