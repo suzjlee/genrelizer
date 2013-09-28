@@ -5,6 +5,10 @@
   <%= @description.body %>
 </p>
 
+<p>
+  <%= @description.creator.name %>
+</p>
+
 <div>
   <% @description.genres.each do |genre| %>
     <%= link_to genre.name, genre %>

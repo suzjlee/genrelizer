@@ -1,9 +1,5 @@
 <div class="genre_title"><%= @genre.name %></div>
-<div class="genre_descriptions">
-  <% @genre.descriptions.each do |description| %>
-    <%= link_to description.body, description %>
-  <% end %>
-</div>
+
 
 <div class="genre_songs">
   <% @genre.songs.each do |song| %>
@@ -18,6 +14,13 @@
   <% end %>
 </div>
 
+<hr>
+
+<div class="genre_descriptions">
+  <% @genre.descriptions.each do |description| %>
+    <%= link_to description.body, description %>
+  <% end %>
+</div>
 <%= link_to 'describe this', describe_genre_path %>
 
 <br>

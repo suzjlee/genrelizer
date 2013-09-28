@@ -14,7 +14,7 @@ class SongsController < ApplicationController
 
   # GET /songs/new
   def new
-    @song = Song.new
+    @song = Song.new :artist_id => params[:artist_id]
   end
 
   # GET /songs/1/edit
@@ -29,7 +29,7 @@ class SongsController < ApplicationController
 
     respond_to do |format|
       if @song.save
-        format.html { redirect_to @song, notice: 'Song was successfully created.' }
+        format.html { redirect_to @song, notice: "#{@song.title} saved." }
         format.json { render action: 'show', status: :created, location: @song }
       else
         format.html { render action: 'new' }

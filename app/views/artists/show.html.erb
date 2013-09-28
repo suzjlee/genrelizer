@@ -1,25 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<div class="artist">
   <%= @artist.name %>
-</p>
+</div>
 
 <div id="songs">
-  <b>Songs:</b>
   <% @artist.songs.each do |song| %>
     <div>
-      <%= link_to song.title, song %>
+      <div class="song_title">
+        <%= link_to song.title, song %>
+      </div>
       <% song.genres.each do |genre| %>
-        <%= link_to genre.name, genre %>
-        <i>
-          <% genre.parent_genres.each do |child| %>
-            <%= link_to child.name, child %>
-          <% end %>
-        </i>
+        <div class="song_genre">
+          <%= link_to genre.name, genre %>
+          <div class="super_genre">
+            <% genre.parent_genres.each do |child| %>
+              <%#= link_to child.name, child %>
+            <% end %>
+          </div>
+        </div>
       <% end %>
     </div>
   <% end %>
+  <%= link_to 'add song', new_artist_song_path(@artist) %>
 </div>
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>
