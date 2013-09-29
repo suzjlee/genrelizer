@@ -1,27 +1,23 @@
-<h1>Listing songs</h1>
+<h1>
+  Songs
+</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @songs.each do |song| %>
-      <tr>
-        <td><%= song.title %></td>
-        <td><%= link_to 'Show', song %></td>
-        <td><%= link_to 'Edit', edit_song_path(song) %></td>
-        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="songs">
+  <% @songs.each do |song| %>
+    <div class="song_title">
+      <%= link_to song.title, song %>
+      -
+      <%= link_to song.artist.name, song.artist %>
+    </div>
+    <div class="song_genres">
+      <%= "(" -%>
+      <% song.genres.each do |genre| %>
+        <%= link_to genre.name, genre %>
+      <% end %>
+      <%= ")" -%>
+    </div>
+    
+  <% end %>
 <br>
 
 <%= link_to 'New Song', new_song_path %>

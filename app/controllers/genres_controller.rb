@@ -8,7 +8,7 @@ class GenresController < ApplicationController
   # GET /genres
   # GET /genres.json
   def index
-    @genres = Genre.all
+    @genres = Genre.order('random()')
   end
 
   # GET /genres/1

@@ -1,7 +1,13 @@
-
 <% @genres.each do |genre| %>
-  <div>
-    <%= link_to genre.name, genre %>  
+  <div class="genre">
+    <%= link_to genre.name, genre, :class => 'genre_name' %>
+    <div class="genre_songs">
+      <% genre.songs.each do |song| %>
+        <div class="song">
+          <%= link_to song.title, song %>
+        </div>
+      <% end %>
+    </div>
   </div>
 <% end %>
 <%= link_to 'New Genre', new_genre_path %>

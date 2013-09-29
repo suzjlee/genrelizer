@@ -8,3 +8,16 @@
   font-style: italic;
   font-weight: 600;
 }
+
+.genre {
+	border: 1px solid #4C153E;
+	width: 230px;
+	height: 330px;
+	display: inline-block;
+}
+
+.genre_name {
+	font-size: 2em;
+	line-height: 1.2em;
+	text-decoration: none;
+}
