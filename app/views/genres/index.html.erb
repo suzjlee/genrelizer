@@ -2,7 +2,7 @@
   <div class="genre">
     <%= link_to genre.name, genre, :class => 'genre_name' %>
     <div class="genre_songs">
-      <% genre.songs.each do |song| %>
+      <% genre.songs.order('random()').each do |song| %>
         <div class="song">
           <%= link_to song.title, song %>
         </div>
