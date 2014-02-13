@@ -1,6 +1,14 @@
-<h1>Editing song</h1>
+<h1>Editing: Song data</h1>
 
 <%= render 'form' %>
+
+<h2>Add a Remixer</h2>
+
+<%= form_for @song.remixers.new do |f| %>
+  <%= f.select :artist_id, options_from_collection_for_select(Artist.all, :id, :name), :include_blank => true %>
+  <%= f.submit 'Add Remixer'%>
+  <%= f.hidden_field :song_id, :value => @song.id %>
+<% end %>
 
 <%= link_to 'Show', @song %> |
 <%= link_to 'Back', songs_path %>

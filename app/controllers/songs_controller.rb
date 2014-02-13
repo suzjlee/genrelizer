@@ -43,7 +43,7 @@ class SongsController < ApplicationController
   def update
     respond_to do |format|
       if @song.update(song_params)
-        format.html { redirect_to @song, notice: 'Song was successfully updated.' }
+        format.html { redirect_to @song, notice: "#{@song.title} has been updated." }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -70,6 +70,6 @@ class SongsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def song_params
-      params.require(:song).permit(:title, :artist_id)
+      params.require(:song).permit(:title, :artist_id, :mix_name)
     end
 end

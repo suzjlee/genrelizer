@@ -1,28 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Artist</strong>
-  <%= @song.artist.andand.name %>
-</p>
+<header class="artist">
+  <%= link_to_name @song.artist %>
+  <div class="remixers">
+    <% @song.remixing_artists.each do |artist| %>
+      <%= link_to_name artist %>
+    <% end %>
+  </div>
+</header>
 
-<p>
-  <strong>Title:</strong>
+<header class="track_title">
   <%= @song.title %>
-</p>
+  <span class="mix_name"><%= @song.mix_name %></span>
+</header>
 
-<b>Genres</b>
 <% @song.genres.each do |genre| %>
   <%= link_to genre.name, genre %>
 <% end %>
 
 <p>
-  Add a genre:
   <%= form_for @song.genrelizations.new do |f| %>
     <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name), :include_blank => true %>
     <%= f.hidden_field :song_id %>
-    <%= f.submit %>
+    <%= f.submit "Add a genre" %>
   <% end %>
 </p>
 
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Back', songs_path %>
+<%= link_to 'Edit', edit_song_path(@song) %>

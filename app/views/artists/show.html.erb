@@ -22,6 +22,25 @@
       <% end %>
     </div>
   <% end %>
+  
+  <% @artist.remixed_songs.each do |song| %>
+    <div>
+      <div class="song_title">
+        <%= link_to song.title, song %>
+      </div>
+      <% song.genres.each do |genre| %>
+        <div class="song_genre">
+          <%= link_to genre.name, genre %>
+          <div class="super_genre">
+            <% genre.parent_genres.each do |child| %>
+              <%#= link_to child.name, child %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  
   <%= link_to 'add song', new_artist_song_path(@artist) %>
 </div>
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
