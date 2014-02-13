@@ -4,6 +4,10 @@
   <%= @artist.name %>
 </div>
 
+<div class="country_of_citizenship">
+  <%= link_to_name @artist.country_of_citizenship %>
+</div>
+
 <div id="songs">
   <% @artist.songs.each do |song| %>
     <div>

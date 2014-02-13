@@ -15,6 +15,11 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+  
+  <div class="field">
+    <%= f.label :country_of_citizenship_id %>
+    <%= f.select :country_of_citizenship_id, options_from_collection_for_select(Country.all, :id, :name, @artist.country_of_citizenship_id), :include_blank => true %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

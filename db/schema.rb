@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140213024040) do
+ActiveRecord::Schema.define(version: 20140213032954) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "creator_id"
+    t.integer  "country_of_citizenship_id"
   end
 
   create_table "audiophiles", force: true do |t|
@@ -48,6 +49,12 @@ ActiveRecord::Schema.define(version: 20140213024040) do
   add_index "audiophiles", ["confirmation_token"], name: "index_audiophiles_on_confirmation_token", unique: true, using: :btree
   add_index "audiophiles", ["email"], name: "index_audiophiles_on_email", unique: true, using: :btree
   add_index "audiophiles", ["reset_password_token"], name: "index_audiophiles_on_reset_password_token", unique: true, using: :btree
+
+  create_table "countries", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "descriptions", force: true do |t|
     t.text     "body"
