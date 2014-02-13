@@ -6,8 +6,14 @@
   <% @songs.each do |song| %>
     <div class="song_title">
       <%= link_to song.title, song %>
+      <span class="mix_name"><%= song.mix_name %></span>
       -
-      <%= link_to song.artist.name, song.artist %>
+      <%= link_to_name song.artist %>
+      <span class="remixers">
+        <% song.remixing_artists.each do |artist| %>
+          <%= link_to_name artist %>
+        <% end %>
+      </span>
     </div>
     <div class="song_genres">
       <%= "(" -%>
