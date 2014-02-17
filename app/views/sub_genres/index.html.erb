@@ -14,8 +14,8 @@
   <tbody>
     <% @sub_genres.each do |sub_genre| %>
       <tr>
-        <td><%= sub_genre.parent_genre %></td>
-        <td><%= sub_genre.child_genre %></td>
+        <td><%= link_to_name sub_genre.parent_genre %></td>
+        <td><%= link_to_name sub_genre.child_genre %></td>
         <td><%= link_to 'Show', sub_genre %></td>
         <td><%= link_to 'Edit', edit_sub_genre_path(sub_genre) %></td>
         <td><%= link_to 'Destroy', sub_genre, method: :delete, data: { confirm: 'Are you sure?' } %></td>

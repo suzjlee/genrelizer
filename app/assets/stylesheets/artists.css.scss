@@ -3,42 +3,43 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .artist {
+  padding: 10px;
   color: #7A2A42;
   font-size: 1.4em;
 
   a:visited {
-	color: #995B42;
+  color: #995B42;
   }
 }
 
 .artist_genres {
-	font-size: 0.68em;
-	color: #7E4B36;
-	
-	a:visited {
-		color: #7E4B36;
-	}
+  font-size: 0.68em;
+  color: #7E4B36;
+  
+  a:visited {
+    color: #7E4B36;
+  }
 }
 
 .song_title {
-	font-size: 1.25em;
-	color: #7A2A42;
-	
-	a:visited {
-		color: #7A2A42;
-	}
+  font-size: 1.25em;
+  color: #7A2A42;
+  
+  a:visited {
+    color: #7A2A42;
+  }
 }
 
 .song_genre {
-	font-size: 0.9em;
-	color: #0E0E0E;
-	display: inline-block;
-	
-	a:visited {
-		color:#121212;
-	}
+  font-size: 0.9em;
+  color: #0E0E0E;
+  display: inline-block;
+  
+  a:visited {
+    color:#121212;
+  }
 }
 
 .super_genre {
-	display: inline-block;
+  display: inline-block;
 }
