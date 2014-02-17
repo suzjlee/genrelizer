@@ -9,17 +9,10 @@
   </div>
 </header>
 
-<div class="song_title">
-  <%= @song.title %>
-</div>
 <div id="song_rating">
   <input type="range" onchange="$('#rating_value').text($(event.currentTarget).val()/100);" 4min="0" max="500" step="10" id="song_rating_range">
 </div>
 <div id="rating_value">
-</div>
-
-<div class="song_artist">
-  -<%= @song.artist.andand.name %>
 </div>
 
 <header class="track_title">
