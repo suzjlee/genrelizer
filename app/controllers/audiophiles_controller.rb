@@ -6,7 +6,7 @@ class AudiophilesController < ApplicationController
   end
   
   def index
-    
+    @audiophiles = Audiophile.all
   end
   
   def edit

@@ -16,7 +16,7 @@ class Audiophile < ActiveRecord::Base
   
   def name
     if last_name.present?
-      "#{first_name} #{last_name}"
+      "#{first_name} #{last_name}" # using string interpolation
     else
       first_name
     end

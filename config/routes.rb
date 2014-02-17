@@ -3,6 +3,8 @@ Genrelizer::Application.routes.draw do
 
   resources :remixers
 
+  resources :ratings
+
   devise_for :audiophiles
   resources :audiophiles
   
