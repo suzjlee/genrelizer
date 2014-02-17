@@ -9,7 +9,7 @@ class GenrelizationsController < ApplicationController
     @genrelization.creator_id = current_audiophile.id
     @genrelization.save
     
-    redirect_to @genrelization
+    redirect_to @genrelization.song
   end
   
   private
