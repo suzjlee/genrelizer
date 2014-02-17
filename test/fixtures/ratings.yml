@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  score: 1
+  subject_type: MyString
+  subject_id: 1
+  creator_id: 1
+  current: false
+
+two:
+  score: 1
+  subject_type: MyString
+  subject_id: 1
+  creator_id: 1
+  current: false

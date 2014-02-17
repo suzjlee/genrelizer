@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<header>
+  <%= @country.name %>
+</header>
+
+<div class="artists">
+  <% @country.artists.each do |artist| %>
+    <span class="artist"><%= link_to_name artist %></span>
+  <% end %>
+</div>
+
+<%= link_to 'Edit', edit_country_path(@country) %> |
+<%= link_to 'Back', countries_path %>

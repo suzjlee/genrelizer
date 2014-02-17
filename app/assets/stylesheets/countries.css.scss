@@ -1,0 +1,15 @@
+// Place all the styles related to the countries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.country_of_citizenship {
+  float: right;
+  margin-right: 20px;
+  font-size: 23px;
+  font-style: italic;
+
+  a {
+    color: #2B5F99;
+    opacity: 0.8;
+  }
+}

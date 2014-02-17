@@ -9,4 +9,10 @@ module ApplicationHelper
       link_to('sign in', new_audiophile_session_path, :class => 'login')
     end
   end
+  
+  def link_to_name object
+    if object.andand.respond_to?(:name)
+      link_to object.name, object
+    end
+  end
 end

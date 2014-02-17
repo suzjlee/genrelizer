@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Song:</strong>
+  <%= @remixer.song_id %>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= @remixer.artist_id %>
+</p>
+
+<p>
+  <strong>Creator:</strong>
+  <%= @remixer.creator_id %>
+</p>
+
+<%= link_to 'Edit', edit_remixer_path(@remixer) %> |
+<%= link_to 'Back', remixers_path %>

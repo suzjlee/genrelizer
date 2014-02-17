@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130925051105) do
+ActiveRecord::Schema.define(version: 20140213032954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20130925051105) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "creator_id"
+    t.integer  "country_of_citizenship_id"
   end
 
   create_table "audiophiles", force: true do |t|
@@ -51,6 +52,12 @@ ActiveRecord::Schema.define(version: 20130925051105) do
   add_index "audiophiles", ["confirmation_token"], name: "index_audiophiles_on_confirmation_token", unique: true, using: :btree
   add_index "audiophiles", ["email"], name: "index_audiophiles_on_email", unique: true, using: :btree
   add_index "audiophiles", ["reset_password_token"], name: "index_audiophiles_on_reset_password_token", unique: true, using: :btree
+
+  create_table "countries", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "descriptions", force: true do |t|
     t.text     "body"
@@ -85,12 +92,31 @@ ActiveRecord::Schema.define(version: 20130925051105) do
     t.integer  "creator_id"
   end
 
+  create_table "ratings", force: true do |t|
+    t.integer  "score"
+    t.string   "subject_type"
+    t.integer  "subject_id"
+    t.integer  "creator_id"
+    t.boolean  "current"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "remixers", force: true do |t|
+    t.integer  "song_id"
+    t.integer  "artist_id"
+    t.integer  "creator_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "songs", force: true do |t|
     t.string   "title"
     t.integer  "artist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "creator_id"
+    t.string   "mix_name"
   end
 
   create_table "sub_genres", force: true do |t|

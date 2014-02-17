@@ -1,0 +1,31 @@
+<h1>Listing remixers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Song</th>
+      <th>Artist</th>
+      <th>Creator</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @remixers.each do |remixer| %>
+      <tr>
+        <td><%= remixer.song_id %></td>
+        <td><%= remixer.artist_id %></td>
+        <td><%= remixer.creator_id %></td>
+        <td><%= link_to 'Show', remixer %></td>
+        <td><%= link_to 'Edit', edit_remixer_path(remixer) %></td>
+        <td><%= link_to 'Destroy', remixer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Remixer', new_remixer_path %>

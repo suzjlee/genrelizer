@@ -1,4 +1,8 @@
 Genrelizer::Application.routes.draw do
+  resources :countries
+
+  resources :remixers
+
   devise_for :audiophiles
   resources :audiophiles
   

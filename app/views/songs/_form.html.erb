@@ -19,6 +19,10 @@
   	<%= f.label :artist_id %>
   	<%= f.select :artist_id, options_from_collection_for_select(Artist.all, :id, :name, @song.artist_id), :include_blank => true %>
   </div>
+  <div class="field">
+    <%= f.label :mix_name %>
+    <%= f.text_field :mix_name %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
