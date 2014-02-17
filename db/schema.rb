@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< Updated upstream
 ActiveRecord::Schema.define(version: 20140213032954) do
-=======
-ActiveRecord::Schema.define(version: 20130929001319) do
->>>>>>> Stashed changes
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,7 +102,6 @@ ActiveRecord::Schema.define(version: 20130929001319) do
     t.datetime "updated_at"
   end
 
-<<<<<<< Updated upstream
   create_table "remixers", force: true do |t|
     t.integer  "song_id"
     t.integer  "artist_id"
@@ -115,8 +110,6 @@ ActiveRecord::Schema.define(version: 20130929001319) do
     t.datetime "updated_at"
   end
 
-=======
->>>>>>> Stashed changes
   create_table "songs", force: true do |t|
     t.string   "title"
     t.integer  "artist_id"

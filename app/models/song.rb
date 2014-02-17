@@ -4,4 +4,5 @@ class Song < ActiveRecord::Base
   has_many :genres, :through => :genrelizations
   has_many :remixers
   has_many :remixing_artists, :through => :remixers, :source => :artist
+  scope :randomized, lambda { order("random()") }
 end

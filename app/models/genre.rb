@@ -7,4 +7,5 @@ class Genre < ActiveRecord::Base
   has_many :super_genres, :class_name => 'SubGenre', :foreign_key => :child_genre_id
   has_many :child_genres, :through => :sub_genres
   has_many :parent_genres, :through => :super_genres
+  scope :randomized, lambda { order("random()") }
 end
